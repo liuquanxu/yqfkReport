@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-curl 'https://app.upc.edu.cn/uc/wap/login/check' \
+curl 'https://app.upc.edu.cn/uc/wap/login/check' --connect-timeout 3 --retry 3  \
   -H 'Connection: keep-alive' \
   -H 'Accept: application/json, text/javascript, */*; q=0.01' \
   -H 'DNT: 1' \
@@ -10,7 +10,7 @@ curl 'https://app.upc.edu.cn/uc/wap/login/check' \
   -H 'Referer: https://app.upc.edu.cn/uc/wap/login?redirect=https%3A%2F%2Fapp.upc.edu.cn%2Fncov%2Fwap%2Fdefault%2Findex' \
   -H 'Accept-Language: zh-CN,zh;q=0.9' \
   --data-raw "username=${username}&password=${password}" -c cookie.txt  --compressed
-  content=`curl -b cookie.txt 'https://app.upc.edu.cn/ncov/wap/default/index'  \
+  content=`curl -b cookie.txt 'https://app.upc.edu.cn/ncov/wap/default/index' --connect-timeout 3 --retry 3 \
   -H 'Connection: keep-alive' -H 'X-Requested-With:XMLHttpRequest'\
   -H 'Cache-Control: max-age=0' \
   -H 'DNT: 1' \
@@ -20,7 +20,7 @@ curl 'https://app.upc.edu.cn/uc/wap/login/check' \
   -H 'Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7'  \
   --compressed | jq '.d | .oldInfo.date = .info.date | .oldInfo.id = .info.id | .oldInfo.created = .info.created | .oldInfo |to_entries|map("\(.key)=\(.value|tostring)") |.|join("&")'`
 
-  curl -X POST 'https://app.upc.edu.cn/ncov/wap/default/save' \
+  curl -X POST 'https://app.upc.edu.cn/ncov/wap/default/save' --connect-timeout 3 --retry 3 \
   -H 'Connection: keep-alive' \
   -H 'Accept: application/json, text/javascript, */*; q=0.01' \
   -H 'DNT: 1' \
