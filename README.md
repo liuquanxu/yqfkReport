@@ -6,7 +6,7 @@
 1. Fork 本仓库(需要GitHub账号)
 2. 进入自己Fork的项目,选择 `Actions` 选项卡, Enable 项目.
 ![image.png](https://i.loli.net/2021/03/23/FyRLgVT8b9Gan5A.png)
-3. 设置机密信息 (数字石大用户名密码)
+3. 设置机密信息 (数字石大用户名密码) 选择 `Settings` -> `Secrets`
 ![image.png](https://i.loli.net/2021/03/23/dCwh2HQZclasYrU.png)
 4. Star 项目,在 `Actions`-> `Report` -> build 处查看 输出
 ![image.png](https://i.loli.net/2021/03/23/M7OgRsk3iPCuTFc.png)
