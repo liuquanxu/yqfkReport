@@ -1,6 +1,6 @@
 # yqfkReport
 使用 `GitHub Actions` 自动提交疫情防控通
-> 由于校园网限制 填报时间改为6:11 AM (UTC时间 22:11)
+> 由于校园网限制 填报时间改为7:11 AM (UTC时间 23:11)（再次拖后一个小时）
 
 # How to Use
 1. Fork 本仓库(需要GitHub账号)
